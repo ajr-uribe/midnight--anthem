@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
 	return (
@@ -8,8 +9,12 @@ export default function Header() {
 					<Link
 						href="/"
 						className="logo">
-						<i className="fas fa-music"></i>
-						Midnight Anthem
+					  <Image
+      src="/images/logo.png"
+      alt="Midnight Anthem logo"
+      width={40}
+      height={40}
+      className="neon-orange"/>
 					</Link>
 					<nav className="nav">
 						<Link href="/">Inicio</Link>

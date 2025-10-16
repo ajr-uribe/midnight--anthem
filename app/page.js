@@ -10,7 +10,7 @@ export default function Home() {
 				<section className="hero">
 					<div className="container">
 						<h1>
-							<i className="fas fa-guitar"></i> LYRICS APP
+							<i className="fas fa-guitar"></i> Midnight Anthem
 						</h1>
 						<p>
 							Descubre y comparte tus letras favoritas con marcas
