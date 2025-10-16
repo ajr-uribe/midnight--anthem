@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Roboto+Mono:wght@400;500&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--bg-primary: #0a0a0a;
+	--bg-secondary: #1a1a1a;
+	--bg-card: #151515;
+	--accent: #e63946;
+	--accent-hover: #d62828;
+	--text-primary: #f1f1f1;
+	--text-secondary: #a8a8a8;
+	--border: #2a2a2a;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	background: var(--bg-primary);
+	color: var(--text-primary);
+	line-height: 1.6;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+	background: var(--bg-secondary);
+	border-bottom: 2px solid var(--accent);
+	padding: 20px 0;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	box-shadow: 0 4px 20px rgba(230, 57, 70, 0.1);
+}
+
+.header-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	font-size: 28px;
+	font-weight: 900;
+	color: var(--accent);
+	text-decoration: none;
+	letter-spacing: -1px;
+}
+
+.logo i {
+	margin-right: 8px;
+}
+
+.nav a {
+	color: var(--text-primary);
+	text-decoration: none;
+	margin-left: 30px;
+	font-weight: 600;
+	transition: color 0.3s;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.nav a:hover {
+	color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+	text-align: center;
+	padding: 100px 20px;
+	background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+	border-bottom: 1px solid var(--border);
+}
+
+.hero h1 {
+	font-size: 64px;
+	font-weight: 900;
+	margin-bottom: 20px;
+	background: linear-gradient(45deg, var(--accent), #f77f00);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.hero p {
+	font-size: 20px;
+	color: var(--text-secondary);
+	max-width: 600px;
+	margin: 0 auto 40px;
+}
+
+.cta-button {
+	display: inline-block;
+	padding: 15px 40px;
+	background: var(--accent);
+	color: white;
+	text-decoration: none;
+	font-weight: 700;
+	border-radius: 50px;
+	transition: all 0.3s;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 14px;
+}
+
+.cta-button:hover {
+	background: var(--accent-hover);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(230, 57, 70, 0.3);
+}
+
+/* Songs Grid */
+.songs-header {
+	padding: 60px 0 40px;
+	text-align: center;
+}
+
+.songs-header h1 {
+	font-size: 48px;
+	font-weight: 900;
+	margin-bottom: 15px;
+}
+
+.filter-section {
+	margin: 40px 0;
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.filter-button {
+	padding: 10px 25px;
+	background: var(--bg-card);
+	border: 2px solid var(--border);
+	color: var(--text-primary);
+	cursor: pointer;
+	font-weight: 600;
+	border-radius: 25px;
+	transition: all 0.3s;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.filter-button:hover {
+	border-color: var(--accent);
+	color: var(--accent);
+}
+
+.filter-button.active {
+	background: var(--accent);
+	border-color: var(--accent);
+	color: white;
+}
+
+.songs-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 25px;
+	padding: 40px 0 80px;
+}
+
+/* Song Card */
+.song-card {
+	background: var(--bg-card);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 30px;
+	transition: all 0.3s;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+
+.song-card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: var(--accent);
+	transform: scaleX(0);
+	transition: transform 0.3s;
+}
+
+.song-card:hover {
+	transform: translateY(-5px);
+	border-color: var(--accent);
+	box-shadow: 0 10px 40px rgba(230, 57, 70, 0.2);
+}
+
+.song-card:hover::before {
+	transform: scaleX(1);
+}
+
+.song-card h3 {
+	font-size: 22px;
+	margin-bottom: 10px;
+	font-weight: 700;
+}
+
+.song-meta {
+	color: var(--text-secondary);
+	font-size: 14px;
+	margin-bottom: 15px;
+}
+
+.genre-tag {
+	display: inline-block;
+	padding: 5px 15px;
+	background: rgba(230, 57, 70, 0.1);
+	border: 1px solid var(--accent);
+	border-radius: 20px;
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--accent);
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/* Song Page */
+.song-page {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 60px 20px;
+}
+
+.song-header-info {
+	text-align: center;
+	margin-bottom: 50px;
+	padding-bottom: 30px;
+	border-bottom: 2px solid var(--border);
+}
+
+.song-header-info h1 {
+	font-size: 48px;
+	font-weight: 900;
+	margin-bottom: 15px;
+}
+
+.song-header-info .artist {
+	font-size: 24px;
+	color: var(--text-secondary);
+	margin-bottom: 20px;
+}
+
+.lyrics-container {
+	background: #000;
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 40px;
+	margin-bottom: 30px;
+	font-family: "Roboto Mono", monospace;
+	position: relative;
+}
+
+.lyrics-content {
+	font-size: 16px;
+	line-height: 2;
+	white-space: pre-wrap;
+}
+
+.timestamp {
+	color: var(--accent);
+	font-weight: 500;
+	margin-right: 15px;
+}
+
+.copy-button {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 15px 30px;
+	background: var(--accent);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-weight: 700;
+	cursor: pointer;
+	transition: all 0.3s;
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 30px auto;
+	display: flex;
+	justify-content: center;
+}
+
+.copy-button:hover {
+	background: var(--accent-hover);
+	transform: translateY(-2px);
+	box-shadow: 0 5px 20px rgba(230, 57, 70, 0.3);
+}
+
+.copy-button.copied {
+	background: #06d6a0;
+}
+
+/* Footer */
+.footer {
+	text-align: center;
+	padding: 30px 20px;
+	border-top: 1px solid var(--border);
+	margin-top: 80px;
+	background: var(--bg-secondary);
+}
+
+.footer p {
+	color: var(--text-secondary);
+	font-size: 14px;
+}
+
+.footer .heart {
+	color: var(--accent);
+	animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+}
+
+.back-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	color: var(--text-secondary);
+	text-decoration: none;
+	margin-bottom: 30px;
+	font-weight: 600;
+	transition: color 0.3s;
+}
+
+.back-link:hover {
+	color: var(--accent);
+}
+
+@media (max-width: 768px) {
+	.hero h1 {
+		font-size: 42px;
+	}
+
+	.songs-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.song-header-info h1 {
+		font-size: 32px;
+	}
+
+	.lyrics-container {
+		padding: 25px;
+	}
+}
